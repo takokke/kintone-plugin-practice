@@ -1,0 +1,23 @@
+{
+    "manifest_version": 1,
+    "version": "1.0.0",
+    "type": "APP",
+    "name": {
+      "ja": "入力値チェックプラグイン",
+      "en": "Input value check plug-in"
+    },
+    "description": {
+      "ja": "郵便番号、電話番号、FAX番号、メールアドレスの入力値をチェックするプラグインです。",
+      "en": "This plugin checks zip code, telephone number, FAX number, e-mail address"
+    },
+    "icon": "image/check.png",
+    "homepage_url": {
+      "ja": "https://cybozu.dev/ja/tutorials/hello-kinplugin/",
+      "en": "https://cybozu.dev/ja/tutorials/hello-kinplugin/"
+    },
+    "desktop": {
+      "js": [
+        "dist/desktop.js"
+      ]
+    }
+  }
