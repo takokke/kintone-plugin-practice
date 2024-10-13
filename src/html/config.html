@@ -1,0 +1,68 @@
+<!--
+ * checkvalue Plug-in
+ * Copyright (c) 2024 Cybozu
+ *
+ * Licensed under the MIT License
+ * https://opensource.org/license/mit/
+-->
+
+<div>
+    <div class="setting">
+        <label class="kintoneplugin-label" for="checkvalue-field-zip">
+            <span>郵便番号をチェックするフィールド</span>
+            <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">郵便番号のチェックを行うフィールドのフィールドコードを選択してください。</div>
+        <div class="kintoneplugin-select-outer">
+          <div class="kintoneplugin-select">
+            <select id="checkvalue-field-zip" name="checkvalue-field-zip">
+              <option value="">-----</option>
+            </select>
+          </div>
+        </div>
+    </div>
+    <div class="setting">
+        <label class="kintoneplugin-label" for="checkvalue-field-tel">
+          <span>電話番号をチェックするフィールド</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">電話番号のチェックを行うフィールドを選択してください。</div>
+        <div class="kintoneplugin-select-outer">
+          <div class="kintoneplugin-select">
+            <select id="checkvalue-field-tel" name="checkvalue-field-tel">
+              <option value="">-----</option>
+            </select>
+          </div>
+        </div>
+    </div>
+    <div class="setting">
+      <label class="kintoneplugin-label" for="checkvalue-field-fax">
+        <span>FAX番号をチェックするフィールド</span>
+        <span class="kintoneplugin-require">*</span>
+      </label>
+      <div class="kintoneplugin-row">FAX 番号のチェックを行うフィールドを選択してください。</div>
+      <div class="kintoneplugin-select-outer">
+        <div class="kintoneplugin-select">
+          <select id="checkvalue-field-fax" name="checkvalue-field-fax">
+            <option value="">-----</option>
+          </select>
+        </div>
+      </div>
+      <div class="setting">
+        <label class="kintoneplugin-label" for="checkvalue-field-mail">
+          <span>メールアドレスをチェックするフィールド</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">メールアドレスのチェックを行うフィールドを選択してください。</div>
+        <div class="kintoneplugin-select-outer">
+          <div class="kintoneplugin-select">
+            <select id="checkvalue-field-mail" name="checkvalue-field-mail">
+              <option value="">-----</option>
+            </select>
+          </div>
+        </div>    
+      <div class="setting">
+        <button type="button" id="submit" class="kintoneplugin-button-dialog-ok">保存する</button>
+        <button type="button" id="cancel" class="kintoneplugin-button-dialog-cancel">キャンセル</button>
+    </div>
+</div>

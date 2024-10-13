@@ -8,24 +8,32 @@ interface KintoneEvent {
     record: kintone.types.SavedFields;
 }
 
-(() => {
+((PLUGIN_ID) => {
     'use strict';
+    console.log(kintone.$PLUGIN_ID);
+    
+    const config = kintone.plugin.app.getConfig(PLUGIN_ID) || {}
+
+    // 設定情報がなければ処理を終了する
+    if (Object.keys(config).length === 0) {
+      return;
+    }
   
     // 郵便番号のフィールドコード
-    const zipFieldCode = '郵便番号';
+    const zipFieldCode = config.zip;
     // TELのフィールドコード
-    const telFieldCode = 'TEL';
+    const telFieldCode = config.tel;
     // FAXのフィールドコード
-    const faxFieldCode = 'FAX';
+    const faxFieldCode = config.fax;
     // メールアドレスのフィールドコード
-    const mailFieldCode = 'メールアドレス';
+    const mailFieldCode = config.mail;
   
     // 郵便番号の入力チェック
     const validateZip = (event: KintoneEvent) => {
       // 郵便番号の定義(7桁の半角数字)
       const zipPattern = /^\d{7}$/;
       // eventよりレコード情報を取得します
-      const record = event.record;
+      const record: any = event.record;
       // エラーの初期化
       record[zipFieldCode].error = null;
       // 郵便番号が入力されていたら、入力値を確認する
@@ -44,7 +52,7 @@ interface KintoneEvent {
       // TELの定義(10桁または11桁の半角数字)
       const telPattern = /^\d{10,11}$/;
       // eventよりレコード情報を取得する
-      const record = event.record;
+      const record: any = event.record;
       // エラーの初期化
       record[telFieldCode].error = null;
   
@@ -64,7 +72,7 @@ interface KintoneEvent {
       // FAXの定義(10桁または11桁の半角数字)
       const faxPattern = /^\d{10,11}$/;
       // eventよりレコード情報を取得する
-      const record = event.record;
+      const record: any = event.record;
       // エラーの初期化
       record[faxFieldCode].error = null;
       // FAXが入力されていたら、入力値を確認する
@@ -83,7 +91,7 @@ interface KintoneEvent {
       // メールアドレスの定義 (簡易的な定義です。さらに詳細に定義する場合は下記の値を変更して下さい)
       const mailPattern = /^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/;
       // eventよりレコード情報を取得する
-      const record = event.record;
+      const record: any = event.record;
       // エラーの初期化
       record[mailFieldCode].error = null;
       // メールアドレスが入力されていたら、入力値を確認する
@@ -149,4 +157,5 @@ interface KintoneEvent {
       validateMail(event);
       return event;
     });
-  })();
+  
+  })(kintone.$PLUGIN_ID);

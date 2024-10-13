@@ -1,6 +1,6 @@
 {
     "manifest_version": 1,
-    "version": "1.0.0",
+    "version": "1.4.0",
     "type": "APP",
     "name": {
       "ja": "入力値チェックプラグイン",
@@ -19,5 +19,17 @@
       "js": [
         "dist/desktop.js"
       ]
+    },
+    "config": {
+      "html": "html/config.html",
+      "js": [
+        "dist/kintone-config-helper.js",
+        "dist/config.js"
+      ],
+      "css": [
+        "css/51-modern-default.css",
+        "css/config.css"
+      ],
+      "required_params": ["zip", "tel", "fax", "mail"]
     }
   }

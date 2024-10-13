@@ -3,7 +3,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: {
-    'desktop': './src/ts/desktop.ts'
+    'desktop': './src/ts/desktop.ts',
   },
 
   output: {
@@ -21,5 +21,5 @@ module.exports = {
 
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
-  ]
+  ],
 };

@@ -10,7 +10,6 @@ declare namespace kintone.types {
     TEL: kintone.fieldTypes.SingleLineText;
     FAX: kintone.fieldTypes.SingleLineText;
     会社名: kintone.fieldTypes.SingleLineText;
-
     会社ロゴ: kintone.fieldTypes.File;
   }
   interface SavedFields extends Fields {
